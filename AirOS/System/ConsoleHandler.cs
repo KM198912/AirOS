@@ -212,6 +212,7 @@ public static void DeleteUser(string input)
             }
             else if (input == "sysinfo")
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("OS Name: " + Kernel.SystemName);
                 Console.WriteLine("OS Version: " + Kernel.SystemVersion);
                 Console.WriteLine("GUI Version: " + Kernel.GuiVersion);
