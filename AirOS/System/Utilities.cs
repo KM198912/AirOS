@@ -25,6 +25,11 @@ namespace AirOS.System
         {
             return CPU.GetCPUVendorName();
         }
+        public static void PrintConsole(string input)
+        {
+            Console.WriteLine(input);
+        }
+            
         public static bool isAdmin(string input)
         { 
         if(input == "User") { return false; }
@@ -34,7 +39,7 @@ namespace AirOS.System
         public static void ErrorScreen(string code, string message, int wait, bool Reboot = false)
         {
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
             Console.WriteLine("Error: " + code);
             Console.WriteLine(message);

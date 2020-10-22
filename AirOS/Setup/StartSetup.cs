@@ -86,7 +86,7 @@ namespace AirOS.Setup
                 Password = Console.ReadLine();
                 File.WriteAllText(Kernel.main_part + "User.cfg", UserName + ":" + Password + ":Administrator" + Environment.NewLine);
                 Console.WriteLine("User Created! Rebooting in 5 Seconds!");
-                Utilities.WaitSeconds(5);
+                System.Utilities.WaitSeconds(5);
                 Cosmos.System.Power.Reboot();
 
             }

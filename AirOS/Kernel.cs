@@ -25,6 +25,7 @@ namespace AirOS
         public static string loggeduser;
         public static string currentpass;
         public static string currank;
+        public static AirOS.Network.IPV4.Config LocalNetworkConfig;
 
 
         protected override void BeforeRun()
@@ -45,7 +46,6 @@ namespace AirOS
                     if(lang == "de") { SetKeyboardScanMap(new DE_Standard()); }
                     else if(lang == "us") { SetKeyboardScanMap(new US_Standard()); }
                 }
-                Console.WriteLine(File.ReadAllText(@"0:\User.cfg"));
                 Console.Write("Enter Username: ");
                 loguser = Console.ReadLine();
                 string fileuser = ConsoleHandler.FindUser(loguser);
@@ -62,16 +62,21 @@ namespace AirOS
                             currank = newuser[2];
                             Console.Clear();
                             Console.WriteLine("Welcome Back {0}", newuser[0]);
-                            return;
+               /*         Network.NetworkInit.Init();
+                        Network.NetworkInit.Enable();
+                        System.Utilities.WaitSeconds(1);
+                        Network.NetworkInterfaces.Init();
+                        System.Utilities.WaitSeconds(3);*/
+                        return;
                         }
                         else
                         {
-                            Utilities.ErrorScreen("0x101", "Your Login Details are incorrect!", 5, true);
+                            System.Utilities.ErrorScreen("0x101", "Your Login Details are incorrect!", 5, true);
                         }
                     }
                     else
                     {
-                        Utilities.ErrorScreen("0x101", "Your Login Details are incorrect!", 5, true);
+                        System.Utilities.ErrorScreen("0x101", "Your Login Details are incorrect!", 5, true);
                     }
                 
             }

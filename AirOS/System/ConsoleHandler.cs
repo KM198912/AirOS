@@ -102,7 +102,7 @@ public static void DeleteUser(string input)
             }
             else if (input == "createuser")
             {
-                if(!Utilities.isAdmin(Kernel.currank)) { Console.WriteLine("No permission to do this."); return; }
+                if (!Utilities.isAdmin(Kernel.currank)) { Console.WriteLine("No permission to do this."); return; }
                 Console.Write("Enter Username: ");
                 var newuser = Console.ReadLine();
                 Console.Write("Enter Password: ");
@@ -177,10 +177,10 @@ public static void DeleteUser(string input)
                     {
                         string user = FindUser(Kernel.loggeduser);
                         string text = File.ReadAllText(@"0:\User.cfg");
-                        text = text.Replace(user, Kernel.loggeduser + ":" + newpass1 + ":"+Kernel.currank);
+                        text = text.Replace(user, Kernel.loggeduser + ":" + newpass1 + ":" + Kernel.currank);
                         File.WriteAllText(@"0:\User.cfg", text);
-                      //  Utilities.WaitSeconds(5);
-                       // Cosmos.System.Power.Reboot();
+                        //  Utilities.WaitSeconds(5);
+                        // Cosmos.System.Power.Reboot();
                     }
                     else
                     {
@@ -189,7 +189,7 @@ public static void DeleteUser(string input)
                 }
             }
 
-        
+
 
 
             else if (input.StartsWith("format"))
@@ -210,11 +210,21 @@ public static void DeleteUser(string input)
                     Console.WriteLine(drive + " is not a valid Drive!");
                 }
             }
-            else if(input == "clear")
+            else if (input == "clear")
             {
                 Console.Clear();
             }
-            else if (input == "sysinfo")
+         /*   else if (input.StartsWith("ipconfig"))
+            {
+                Network.IPConfig.c_IPConfig(input);
+            }
+            else if (input.StartsWith("ping "))
+                {
+                    Network.Ping.c_Ping(input.Split(" ")[1]);
+                   
+                }
+         */
+                else if (input == "sysinfo")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("OS Name: " + Kernel.SystemName);
