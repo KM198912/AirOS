@@ -210,12 +210,18 @@ public static void DeleteUser(string input)
                     Console.WriteLine(drive + " is not a valid Drive!");
                 }
             }
+            else if(input == "clear")
+            {
+                Console.Clear();
+            }
             else if (input == "sysinfo")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("OS Name: " + Kernel.SystemName);
                 Console.WriteLine("OS Version: " + Kernel.SystemVersion);
                 Console.WriteLine("GUI Version: " + Kernel.GuiVersion);
+                Console.WriteLine("Logged in User: " + Kernel.loggeduser);
+                Console.WriteLine("User Permission Level: " + Kernel.currank);
                 Console.WriteLine("Keyboard Layout: " + File.ReadAllText(@"0:\lang.cfg"));
                 Console.WriteLine("Filesystem: " + Kernel.fs.GetFileSystemType("0"));
                 Console.WriteLine("Partition Label: " + Kernel.fs.GetFileSystemLabel("0"));
@@ -223,7 +229,7 @@ public static void DeleteUser(string input)
                 Console.WriteLine("CPU: " + Utilities.CPUName().Trim());
                 Console.WriteLine("CPU Vendor: " + Utilities.CPUVendor());
                 Console.WriteLine("Installed Memory: " + Utilities.GetTotalMemory() + " MB");
-                
+                Console.ResetColor();
 
             }
             else
