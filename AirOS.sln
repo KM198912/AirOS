@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirOS", "AirOS\AirOS.csproj", "{6B395023-5E33-4948-9740-69569BE16C34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B395023-5E33-4948-9740-69569BE16C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B395023-5E33-4948-9740-69569BE16C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B395023-5E33-4948-9740-69569BE16C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B395023-5E33-4948-9740-69569BE16C34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {725EB937-63E8-46B3-9538-75792EFB0A19}
+	EndGlobalSection
+EndGlobal
